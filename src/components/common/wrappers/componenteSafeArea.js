@@ -1,0 +1,16 @@
+import { StatusBar } from 'expo-status-bar';
+import { styled } from 'nativewind';
+import { View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
+export default function ComponentSafeArea({ children, styleColor = 'light', backgroundColor = '#0e964d' }) {
+    const StyledView = styled(View)
+    return (
+        <>
+            <StatusBar style={`${styleColor}`} backgroundColor={`${backgroundColor ? backgroundColor : ''}`} />
+            <SafeAreaView className="flex-1 relative">
+                {children}
+            </SafeAreaView>
+        </>
+    )
+}
